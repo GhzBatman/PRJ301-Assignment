@@ -52,7 +52,7 @@
                         <div class="col-md-5 col-xl-5 pe-xxl-0">
                             <div class="card card-bg shadow hero-header-form">
                                 <div class="card-body p-4 p-xl-6">
-                                    <h2 class="text-100 text-center">??ng Nh?p</h2>
+                                    <h2 class="text-100 text-center">Dang Nhap</h2>
                                     <form class="mb-3">
                                         <div class="form-floating mb-3">
                                             <input class="form-control input-box form-ensurance-header-control" id="floatingEmail" type="email" placeholder="quannbhe151118@fpt.edu.vn" />
@@ -80,7 +80,7 @@
                     <div class="row">
                         <h2 class="text-light text-center mb-8">Help</h2>
                         <div class="col-12 col-lg-6 col-xl-7 mb-4 order-0 order-sm-0"><a class="logo-footer fs-7" href="index.html"><span class="text-primary fw-bolder">Fpt</span><span class="fw-thin text-300">University</span></a>
-                            <p class="text-light my-4"> <i class="fas fa-map-marker-alt me-3"></i><span class="text-light">M?i góp ý, th?c m?c xin liên h?: Phòng d?ch v? sinh viên:</p>
+                            <p class="text-light my-4"> <i class="fas fa-map-marker-alt me-3"></i><span class="text-light">Moi gop y, thac mac xin lien he: Phong dich vu sinh vien:</p>
                             <p class="text-light"> <i class="fas fa-envelope me-3 text-primary"> </i><a href="mailto:vctung@outlook.com">dichvusinhvien@fe.edu.vn </a></p>
                             <p class="text-light"> <i class="fas fa-phone-alt me-3 text-primary"> </i><a href="tel:1-800-800-2299">(024)7308.13.13 (Support)</a></p>
                         </div>
@@ -104,7 +104,7 @@
                 <div class="container">
                     <div class="row justify-content-md-between justify-content-evenly py-4">
                         <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
-                            <p class="fs--1 my-2 fw-light text-200">PRJ301 &copy; Th?y S?n, 2022</p>
+                            <p class="fs--1 my-2 fw-light text-200">PRJ301 &copy; Thay Son, 2022</p>
                         </div>
                         <div class="col-12 col-sm-8 col-md-6">
                             <p class="fs--1 fw-light my-2 text-center text-md-end text-200"> Made with&nbsp;

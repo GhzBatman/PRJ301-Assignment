@@ -4,38 +4,85 @@
  */
 package model;
 
+import java.security.acl.Group;
+
 /**
  *
  * @author Quan
  */
 public class Student {
 
-    private String studentcode;
-    private String fullname;
-    private String image;
+    private String sid;
+    private String sname;
+    private String scode;
+    private boolean sattendance;
+    private String smail;
+    private String snote;
+    private Group groups;
+    private Course courses;
 
-    public String getStudentcode() {
-        return studentcode;
+    public Course getCourses() {
+        return courses;
     }
 
-    public void setStudentcode(String studentcode) {
-        this.studentcode = studentcode;
+    public void setCourses(Course courses) {
+        this.courses = courses;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getSid() {
+        return sid;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 
-    public String getImage() {
-        return image;
+    public String getSname() {
+        return sname;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setSname(String sname) {
+        this.sname = sname;
+    }
+
+    public String getScode() {
+        return scode;
+    }
+
+    public void setScode(String scode) {
+        this.scode = scode;
+    }
+
+    public boolean isSattendance() {
+        return sattendance;
+    }
+
+    public void setSattendance(boolean sattendance) {
+        this.sattendance = sattendance;
+    }
+
+    public String getSmail() {
+        return smail;
+    }
+
+    public void setSmail(String smail) {
+        this.smail = smail;
+    }
+
+    public String getSnote() {
+        return snote;
+    }
+
+    public void setSnote(String snote) {
+        this.snote = snote;
+    }
+
+    public Group getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Group groups) {
+        this.groups = groups;
     }
 
 }

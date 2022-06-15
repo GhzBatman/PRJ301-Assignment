@@ -10,17 +10,9 @@ package model;
  */
 public class Account {
 
-    private int accountid;
     private String username;
-    private String password;
-
-    public int getAccountid() {
-        return accountid;
-    }
-
-    public void setAccountid(int accountid) {
-        this.accountid = accountid;
-    }
+    private String pass;
+    private String role;
 
     public String getUsername() {
         return username;
@@ -30,12 +22,20 @@ public class Account {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
 }

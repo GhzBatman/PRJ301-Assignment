@@ -4,7 +4,7 @@
  */
 package dal;
 
-import java.security.acl.Group;
+import model.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class GroupDBContext extends DBContext<Group>{
             stm.setInt(1, cid);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {                
-                Group g = new Group() {};
+                Group g = new Group();
                 g.setGid(rs.getInt("gid"));
                 g.setGname(rs.getString("gname"));
                 g.setGcdate(rs.getDate("gcdate"));

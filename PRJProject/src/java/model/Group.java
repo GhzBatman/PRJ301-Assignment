@@ -4,67 +4,78 @@
  */
 package model;
 
-import java.sql.Date;
-
 /**
  *
  * @author Quan
  */
 public class Group {
 
-    private int gid;
-    private String gname;
-    private Date gcdate;
-    private int gcslot;
-    private String groom;
-    private Course course;
+    private int id;
+    private int code;
+    private int subid;
+    private String term;
+    private String campus;
+    private String department;
 
-    public String getGroom() {
-        return groom;
+    public Group() {
     }
 
-    public void setGroom(String groom) {
-        this.groom = groom;
+    public Group(int id, int code, int subid, String term, String campus, String Department) {
+        this.id = id;
+        this.code = code;
+        this.subid = subid;
+        this.term = term;
+        this.campus = campus;
+        this.department = department;
     }
 
-    public int getGid() {
-        return gid;
+    public int getId() {
+        return id;
     }
 
-    public void setGid(int gid) {
-        this.gid = gid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getGname() {
-        return gname;
+    public int getCode() {
+        return code;
     }
 
-    public void setGname(String gname) {
-        this.gname = gname;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public Date getGcdate() {
-        return gcdate;
+    public int getSubid() {
+        return subid;
     }
 
-    public void setGcdate(Date gcdate) {
-        this.gcdate = gcdate;
+    public void setSubid(int subid) {
+        this.subid = subid;
     }
 
-    public int getGcslot() {
-        return gcslot;
+    public String getTerm() {
+        return term;
     }
 
-    public void setGcslot(int gcslot) {
-        this.gcslot = gcslot;
+    public void setTerm(String term) {
+        this.term = term;
     }
 
-    public Course getCourse() {
-        return course;
+    public String getCampus() {
+        return campus;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setCampus(String campus) {
+        this.campus = campus;
     }
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String Department) {
+        this.department = department;
+    }
+    
+    
 }

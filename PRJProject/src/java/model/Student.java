@@ -4,85 +4,47 @@
  */
 package model;
 
-import java.security.acl.Group;
-
 /**
  *
  * @author Quan
  */
 public class Student {
 
-    private String sid;
-    private String sname;
-    private String scode;
-    private boolean sattendance;
-    private String smail;
-    private String snote;
-    private Group groups;
-    private Course courses;
+    private int id;
+    private int code;
+    private String FullName;
 
-    public Course getCourses() {
-        return courses;
+    public Student() {
     }
 
-    public void setCourses(Course courses) {
-        this.courses = courses;
+    public Student(int id, int codde, String FullName) {
+        this.id = id;
+        this.code = code;
+        this.FullName = FullName;
     }
 
-    public String getSid() {
-        return sid;
+    public int getId() {
+        return id;
     }
 
-    public void setSid(String sid) {
-        this.sid = sid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getSname() {
-        return sname;
+    public int getCodde() {
+        return code;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public void setCodde(int codde) {
+        this.code = code;
     }
 
-    public String getScode() {
-        return scode;
+    public String getFullName() {
+        return FullName;
     }
 
-    public void setScode(String scode) {
-        this.scode = scode;
-    }
-
-    public boolean isSattendance() {
-        return sattendance;
-    }
-
-    public void setSattendance(boolean sattendance) {
-        this.sattendance = sattendance;
-    }
-
-    public String getSmail() {
-        return smail;
-    }
-
-    public void setSmail(String smail) {
-        this.smail = smail;
-    }
-
-    public String getSnote() {
-        return snote;
-    }
-
-    public void setSnote(String snote) {
-        this.snote = snote;
-    }
-
-    public Group getGroups() {
-        return groups;
-    }
-
-    public void setGroups(Group groups) {
-        this.groups = groups;
+    public void setFullName(String FullName) {
+        this.FullName = FullName;
     }
 
 }

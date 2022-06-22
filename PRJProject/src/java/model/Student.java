@@ -11,13 +11,13 @@ package model;
 public class Student {
 
     private int id;
-    private int code;
+    private String code;
     private String FullName;
 
     public Student() {
     }
 
-    public Student(int id, int codde, String FullName) {
+    public Student(int id, String code, String FullName) {
         this.id = id;
         this.code = code;
         this.FullName = FullName;
@@ -31,11 +31,11 @@ public class Student {
         this.id = id;
     }
 
-    public int getCodde() {
+    public String getCode() {
         return code;
     }
 
-    public void setCodde(int codde) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -47,4 +47,5 @@ public class Student {
         this.FullName = FullName;
     }
 
+    
 }

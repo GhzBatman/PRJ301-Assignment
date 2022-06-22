@@ -9,6 +9,7 @@ package model;
  * @author Quan
  */
 public class Subject {
+
     private int id;
     private String subcode;
     private String subName;
@@ -45,5 +46,5 @@ public class Subject {
     public void setSubName(String subName) {
         this.subName = subName;
     }
-    
+
 }

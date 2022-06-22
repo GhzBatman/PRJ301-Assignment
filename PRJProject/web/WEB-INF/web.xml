@@ -8,6 +8,14 @@
         <servlet-name>InstructorController</servlet-name>
         <servlet-class>controller.InstructorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AttendenceController</servlet-name>
+        <servlet-class>controller.AttendenceController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TimeTableController</servlet-name>
+        <servlet-class>controller.TimeTableController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListStudentController</servlet-name>
         <url-pattern>/liststudent</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>InstructorController</servlet-name>
         <url-pattern>/InstructorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AttendenceController</servlet-name>
+        <url-pattern>/AttendenceController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TimeTableController</servlet-name>
+        <url-pattern>/TimeTableController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

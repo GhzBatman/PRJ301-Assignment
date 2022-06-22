@@ -9,6 +9,7 @@ package model;
  * @author Quan
  */
 public class Slot {
+    
     private int slotid;
     private int groupid;
     private int date;

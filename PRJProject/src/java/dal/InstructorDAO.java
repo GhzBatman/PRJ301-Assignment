@@ -17,17 +17,17 @@ import model.Instructor;
 public class InstructorDAO extends DBContext {
 
     public ArrayList<Instructor> getAllInstructor() {
-        ArrayList<Instructor> alist = new ArrayList<>();
+        ArrayList<Instructor> ilist = new ArrayList<>();
         String sql = " select * from Instructor ";
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
-                Instructor i = new Instructor(rs.getInt(1), rs.getInt(2));
-                alist.add(i);
+                Instructor i = new Instructor(rs.getInt(1), rs.getString(2), rs.getString(3));
+                ilist.add(i);
             }
         } catch (Exception e) {
         }
-        return null;
+        return ilist;
     }
 }

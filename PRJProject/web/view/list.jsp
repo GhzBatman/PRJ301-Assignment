@@ -6,9 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="login.jsp"><h1>Fpt University</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.jsp">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list.jsp">List Student</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <table class="table">
             <thead style="background-color: cadetblue;">
                 <tr>
@@ -17,7 +34,7 @@
                     <th style="width:20%">Department</th>
                     <th style="width:40%">Course</th>
                     <th style="width:20%">Group</th>
-    
+
                 </tr>
             </thead>
             <tbody>
@@ -64,7 +81,7 @@
                             <td style="width:15%">Ba</td>
                             <td style="width:15%">Quan</td>
                         </tr>
-    
+
                     </tbody>
                 </table>
             </div>

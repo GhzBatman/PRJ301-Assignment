@@ -17,7 +17,7 @@ import model.Instructor;
  *
  * @author Quan
  */
-public class InstructorController extends HttpServlet {
+public class TimeTableController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

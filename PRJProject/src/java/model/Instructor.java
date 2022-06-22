@@ -9,23 +9,34 @@ package model;
  * @author Quan
  */
 public class Instructor {
-    private String iname;
+
+    private int id;
+    private String name;
     private String username;
 
     public Instructor() {
     }
 
-    public Instructor(String iname, String username) {
-        this.iname = iname;
+    public Instructor(int id, String name, String username) {
+        this.id = id;
+        this.name = name;
         this.username = username;
     }
 
-    public String getIname() {
-        return iname;
+    public int getId() {
+        return id;
     }
 
-    public void setIname(String iname) {
-        this.iname = iname;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -35,6 +46,6 @@ public class Instructor {
     public void setUsername(String username) {
         this.username = username;
     }
-    
+
     
 }

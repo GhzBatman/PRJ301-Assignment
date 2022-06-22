@@ -11,7 +11,7 @@ package model;
 public class Group {
 
     private int id;
-    private int code;
+    private String code;
     private int subid;
     private String term;
     private String campus;
@@ -20,7 +20,7 @@ public class Group {
     public Group() {
     }
 
-    public Group(int id, int code, int subid, String term, String campus, String Department) {
+    public Group(int id, String code, int subid, String term, String campus, String department) {
         this.id = id;
         this.code = code;
         this.subid = subid;
@@ -37,11 +37,11 @@ public class Group {
         this.id = id;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -73,9 +73,10 @@ public class Group {
         return department;
     }
 
-    public void setDepartment(String Department) {
+    public void setDepartment(String department) {
         this.department = department;
     }
+
     
     
 }

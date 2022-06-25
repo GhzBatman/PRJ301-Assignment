@@ -12,22 +12,26 @@ public class Group {
 
     private int id;
     private String code;
-    private int subid;
+    private Subject subject;
     private String term;
     private String campus;
     private String department;
+    private int instructor;
 
     public Group() {
     }
 
-    public Group(int id, String code, int subid, String term, String campus, String department) {
+    public Group(int id, String code, Subject subject, String term, String campus, String department, int instructor) {
         this.id = id;
         this.code = code;
-        this.subid = subid;
+        this.subject = subject;
         this.term = term;
         this.campus = campus;
         this.department = department;
+        this.instructor = instructor;
     }
+
+
 
     public int getId() {
         return id;
@@ -45,12 +49,12 @@ public class Group {
         this.code = code;
     }
 
-    public int getSubid() {
-        return subid;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubid(int subid) {
-        this.subid = subid;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
     public String getTerm() {
@@ -77,6 +81,12 @@ public class Group {
         this.department = department;
     }
 
-    
-    
+    public int getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(int instructor) {
+        this.instructor = instructor;
+    }
+
 }

@@ -52,7 +52,7 @@
                             <td style="width:10%">HE151118</td>
                             <td style="width:12.5%">Nguyen Ba Quan</td>
                             <td style="width:12.5%">Image Student</td>
-                            <td style="width:10%">Present</td>
+                            <td style="width:10%"><input type="radio" name = "status">present <input type="radio" name = "status">absent</td>
                             <td style="width:10%">abc</td>
                             <td style="width:10%">sonnt5</td>
                             <td style="width:20%">5/6/2022 7:30:00</td>

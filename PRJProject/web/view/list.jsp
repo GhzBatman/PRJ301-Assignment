@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,25 +39,42 @@
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
-                    <td style="width:10%">Fu-HL</td>
-                    <td style="width:10%">Summer2018 <br>Fall2018 <br>Summer2018 <br>Spring2019 <br>Summer2019 <br>Fall2018
-                        <br>Spring2019 <br>
+                    <td style="width:10%">
+                        <c:forEach var="c" items="${campuslist}">
+                            <a href="ListStudent?campus=${c}">${c}</a><br>
+                        </c:forEach>
                     </td>
-                    <td style="width:20%">BLOC<br> Multimedia Communication<br> English<br> Finance<br>BLOC<br> Multimedia
-                        Communication<br> English<br> Finance<br>BLOC<br> Multimedia Communication<br> English<br> Finance
+
+                    <td style="width:20%">
+                        <c:forEach var="c" items="${termlist}">
+                            <a href="ListStudent?campus=${param['campus']}&term=${t}">${t}<br>
+                        </c:forEach>
                     </td>
-                    <td style="width:40%">Date Structure and Algorithms(CSD201) <br> math<br> Java Web
-                        Application(PRJ301)<br>Date Structure and Algorithms(CSD201) <br> math<br> Java Web
-                        Application(PRJ301)<br>Date Structure and Algorithms(CSD201) <br> math<br> Java Web
-                        Application(PRJ301)<br>Date Structure and Algorithms(CSD201) <br> math<br> Java Web
-                        Application(PRJ301)<br></td>
-                    <td style="width:20%"> AI1607 SE1616 SA1530 AI1636 AI1607 SE1616 SA1530 AI1636 AI1607 SE1616 SA1530
-                        AI1636</td>
+                    <td style="width:40%">
+                        <c:forEach var="c" items="${departmentlist}">
+                            <a href="ListStudent?campus=${param['campus']}&term=${param['term']}&dept${d}">${d}<br>
+                        </c:forEach>
+                    </td>
+                    <td style="width:20%"> 
+                        <c:forEach var="c" items="${courselist}">
+                            <a href="ListStudent?campus=${param['campus']}&term=${param['term']}&dept${c}">${c}<br>
+                        </c:forEach>
+                    </td>
+                    <td style="width:20%"> 
+                        <c:forEach var="c" items="${grouplist}">
+                            <a href="ListStudent?campus=${param['campus']}&term=${param['term']}&dept${g}">${g}<br>
+                        </c:forEach>
+                    </td>
+
                 </tr>
             </tbody>
+            
         </table>
-        <h1>See Student List</h1>
+        <c:if test="${liststudent.size()!=0}">
+                <h1>See Student List</h1>
+            </c:if>
         <div class="container-fluid">
             <div class="row">
                 <table class="table">
@@ -72,15 +90,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="width:10%">1</td>
-                            <td style="width:15%">Image Student</td>
-                            <td style="width:15%">Quannbhe151118</td>
-                            <td style="width:15%">HE151118</td>
-                            <td style="width:15%">Nguyen </td>
-                            <td style="width:15%">Ba</td>
-                            <td style="width:15%">Quan</td>
-                        </tr>
+                        <c:forEach var="" items="">
+                         <tr>
+                            <td style="width:10%">${s.getId()}</td>
+                            <td style="width:15%"><img src="img">${s.getImg()}</td>
+                            <td style="width:15%">${s.getCode()}</td>
+                            <td style="width:15%">${s.getCode()}</td>
+                            <td style="width:15%">${s.getName()} </td>
+                        </tr>   
+                        </c:forEach>
+                        
 
                     </tbody>
                 </table>

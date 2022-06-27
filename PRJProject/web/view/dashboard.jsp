@@ -7,6 +7,7 @@
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
     </head>
     <body>
         
@@ -19,10 +20,10 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.jsp">Home </a>
+                        <a class="nav-link" href="./view/dashboard.jsp">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="list.jsp">List Student</a>
+                        <a class="nav-link" href="./view/list.jsp">List Student</a>
                     </li>
                 </ul>
             </div>
@@ -73,7 +74,7 @@
                     <tbody>
                         <tr>
                             <td style="width: 12.5%;">Slot1</td>
-                            <td style="width: 12.5%;"><a href="#">SWP391<br>at DE-C209<br>(attend)</a></td>
+                            <td style="width: 12.5%;"><a href="./view/dashboard.jsp">SWP391<br>at DE-C209<br>(attend)</a></td>
                             <td style="width: 12.5%;"></td>
                             <td style="width: 12.5%;"><a href="#">SWP391<br>at DE-C209<br>(attend)</a></td>
                             <td style="width: 12.5%;"></td>

@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.jsp">Home </a>
+                        <a class="nav-link" href="./view/dashboard.jsp">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="list.jsp">List Student</a>
+                        <a class="nav-link" href="./view/list.jsp">List Student</a>
                     </li>
                 </ul>
             </div>

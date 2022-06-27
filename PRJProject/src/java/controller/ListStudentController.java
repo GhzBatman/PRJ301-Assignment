@@ -45,6 +45,8 @@ public class ListStudentController extends HttpServlet {
         ArrayList departmentlist = gdao.getAllDep(term);
         ArrayList courselist = gdao.getAllSubject(term, dept);
         ArrayList grouplist = gdao.getAllGroup(term, dept, courseid);
+        ArrayList<Student> liststudent = sdao.getAllStudent(group);
+        
         
         request.setAttribute("liststudent", liststudent);
         request.setAttribute("campuslist", campuslist);
@@ -52,9 +54,7 @@ public class ListStudentController extends HttpServlet {
         request.setAttribute("departmentlist", departmentlist);
         request.setAttribute("courselist", courselist);
         request.setAttribute("grouplist", grouplist);
-//        ArrayList<Student> alist = dao.getAllStudent();
-//        request.setAttribute("alist", alist);
-
+        
         request.getRequestDispatcher("./view/list.jsp").forward(request, response);
 
     }

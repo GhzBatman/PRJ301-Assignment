@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.jsp">Home </a>
+                        <a class="nav-link" href="./view/dashboard.jsp">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="list.jsp">List Student</a>
+                        <a class="nav-link" href="./view/list.jsp">List Student</a>
                     </li>
                 </ul>
             </div>
@@ -43,38 +43,38 @@
                 <tr>
                     <td style="width:10%">
                         <c:forEach var="c" items="${campuslist}">
-                            <a href="ListStudent?campus=${c}">${c}</a><br>
+                            <a href="liststudent?campus=${c}">${c}</a><br>
                         </c:forEach>
                     </td>
 
                     <td style="width:20%">
-                        <c:forEach var="c" items="${termlist}">
-                            <a href="ListStudent?campus=${param['campus']}&term=${t}">${t}<br>
+                        <c:forEach var="t" items="${termlist}">
+                            <a href="liststudent?campus=${param['campus']}&term=${t}">${t}</a><br>
                         </c:forEach>
                     </td>
                     <td style="width:40%">
-                        <c:forEach var="c" items="${departmentlist}">
-                            <a href="ListStudent?campus=${param['campus']}&term=${param['term']}&dept${d}">${d}<br>
+                        <c:forEach var="d" items="${departmentlist}">
+                            <a href="liststudent?campus=${param['campus']}&term=${param['term']}&dept=${d}">${d}</a><br>
                         </c:forEach>
                     </td>
                     <td style="width:20%"> 
                         <c:forEach var="c" items="${courselist}">
-                            <a href="ListStudent?campus=${param['campus']}&term=${param['term']}&dept${c}">${c}<br>
+                            <a href="liststudent?campus=${param['campus']}&term=${param['term']}&dept=${param['dept']}&courseid=${c}">${c}</a><br>
                         </c:forEach>
                     </td>
                     <td style="width:20%"> 
-                        <c:forEach var="c" items="${grouplist}">
-                            <a href="ListStudent?campus=${param['campus']}&term=${param['term']}&dept${g}">${g}<br>
+                        <c:forEach var="g" items="${grouplist}">
+                            <a href="liststudent?campus=${param['campus']}&term=${param['term']}&dept=${param['dept']}&courseid=${param['courseid']}&group=${g}">${g}</a><br>
                         </c:forEach>
                     </td>
 
                 </tr>
             </tbody>
-            
+            <%--<c:if test="${liststudent.size()!=0}">--%>
+                <!--<h1>See Student List</h1>-->
+            <%--</c:if>--%>
         </table>
-        <c:if test="${liststudent.size()!=0}">
-                <h1>See Student List</h1>
-            </c:if>
+        
         <div class="container-fluid">
             <div class="row">
                 <table class="table">
@@ -84,19 +84,17 @@
                             <th style="width:15%">Image</th>
                             <th style="width:15%">Member</th>
                             <th style="width:15%">Code</th>
-                            <th style="width:15%">Surname</th>
-                            <th style="width:15%">Middlename</th>
-                            <th style="width:15%">Given Name</th>
+                            <th style="width:15%">Full Name</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="" items="">
+                        <c:forEach var="s" items="${liststudent}">
                          <tr>
                             <td style="width:10%">${s.getId()}</td>
-                            <td style="width:15%"><img src="img">${s.getImg()}</td>
+                            <td style="width:15%"><img src="${s.getImg()}" width="150px"></td>
+                            <td style="width:15%">${param['group']}</td>
                             <td style="width:15%">${s.getCode()}</td>
-                            <td style="width:15%">${s.getCode()}</td>
-                            <td style="width:15%">${s.getName()} </td>
+                            <td style="width:15%">${s.getFullName()} </td>
                         </tr>   
                         </c:forEach>
                         

@@ -15,11 +15,6 @@ import model.Student;
  */
 public class StudentDAO extends DBContext {
 
-//    public static void main(String[] args) {
-//        StudentDAO dao = new StudentDAO();
-//        ArrayList<Student> alist = dao.getAllStudent();
-//        System.out.println(alist.size());
-//    }
     public ArrayList<Student> getAllStudent(String groupcode) {
         ArrayList<Student> alist = new ArrayList<>();
         String sql = " select s.* , g.* from Student s, [Group] g, Enroll e\n"

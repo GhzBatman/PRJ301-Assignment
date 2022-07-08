@@ -11,16 +11,16 @@ package model;
 public class Subject {
 
     private int id;
-    private String subcode;
-    private String subName;
+    private String code;
+    private String Name;
 
     public Subject() {
     }
 
     public Subject(int id, String subcode, String subName) {
         this.id = id;
-        this.subcode = subcode;
-        this.subName = subName;
+        this.code = code;
+        this.Name = Name;
     }
 
     public int getId() {
@@ -31,20 +31,20 @@ public class Subject {
         this.id = id;
     }
 
-    public String getSubcode() {
-        return subcode;
+    public String getcode() {
+        return code;
     }
 
-    public void setSubcode(String subcode) {
-        this.subcode = subcode;
+    public void setcode(String subcode) {
+        this.code = code;
     }
 
-    public String getSubName() {
-        return subName;
+    public String getName() {
+        return Name;
     }
 
-    public void setSubName(String subName) {
-        this.subName = subName;
+    public void setName(String subName) {
+        this.Name = Name;
     }
 
 }

@@ -30,9 +30,10 @@ public class AttendenceController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        StudentDAO dao = new StudentDAO();
-        ArrayList<Student> alist = dao.getAllStudent();
-        request.setAttribute("alist", alist);
+        StudentDAO sdao = new StudentDAO();
+        String group = request.getParameter("group");
+        ArrayList<Student> liststudent = sdao.getAllStudent(group);
+        request.setAttribute("liststudent", liststudent);
         
         request.getRequestDispatcher("./view/attendence.jsp").forward(request, response);
         

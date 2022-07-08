@@ -92,12 +92,18 @@
                         </tr>
 
 
-                        <c:forEach var="s" items="${alist}">
+                        <c:forEach var="s" items="${liststudent}">
                             <tr>
-                                <td>${s.getId()}</td>
-                                <td>${s.getCode()}</td>
-                                <td>${s.getFullName()}</td>
-                            </tr>
+                                <td style="width:10%">${s.getId()}</td>
+                                <td style="width:15%">PRJ301</td>
+                                <td style="width:15%">${s.getCode()}</td>
+                                <td style="width:15%">${s.getFullName()} </td>
+                                <td style="width:15%"><img src="${s.getImg()}" width="150px"></td>
+                                <td style="width:10%"><input type="radio" name = "status">present <input type="radio" name = "status">absent</td>
+                                <td style="width:10%">abc</td>
+                                <td style="width:10%">sonnt5</td>
+                                <td style="width:20%">5/6/2022 7:30:00</td>
+                            </tr> 
                         </c:forEach>
                 </table>
                 </tbody>

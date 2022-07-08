@@ -16,11 +16,11 @@ import model.Subject;
  */
 public class SubjectDAO extends DBContext {
     
-    public static void main(String[] args) {
-        SubjectDAO dao = new SubjectDAO();
-        ArrayList<Subject> alist = dao.getAllSubject();
-        System.out.println(alist.size());
-    }
+//    public static void main(String[] args) {
+//        SubjectDAO dao = new SubjectDAO();
+//        ArrayList<Subject> alist = dao.getAllSubject();
+//        System.out.println(alist.size());
+//    }
     public ArrayList<Subject> getAllSubject() {
         ArrayList<Subject> alist = new ArrayList<>();
         String sql = " select * from Subject ";

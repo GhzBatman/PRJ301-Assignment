@@ -4,48 +4,54 @@
  */
 package model;
 
+import java.sql.Date;
+
 /**
  *
  * @author Quan
  */
 public class Slot {
     
-    private int slotid;
-    private int groupid;
-    private int date;
+    private int id;
+    private Group group;
+    private Date date;
     private int slot;
+    private Room room;
+    private boolean status;
 
     public Slot() {
     }
 
-    public Slot(int slotid, int groupid, int date, int slot) {
-        this.slotid = slotid;
-        this.groupid = groupid;
+    public Slot(int id, Group group, Date date, int slot, Room room, boolean status) {
+        this.id = id;
+        this.group = group;
         this.date = date;
         this.slot = slot;
+        this.room = room;
+        this.status = status;
     }
 
-    public int getSlotid() {
-        return slotid;
+    public int getId() {
+        return id;
     }
 
-    public void setSlotid(int slotid) {
-        this.slotid = slotid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getGroupid() {
-        return groupid;
+    public Group getGroup() {
+        return group;
     }
 
-    public void setGroupid(int groupid) {
-        this.groupid = groupid;
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -56,5 +62,23 @@ public class Slot {
     public void setSlot(int slot) {
         this.slot = slot;
     }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
+    
     
 }

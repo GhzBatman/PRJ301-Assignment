@@ -11,18 +11,26 @@ package model;
  */
 public class Room {
     private int id;
-    private String code;
+    private String Code;
     private String campus;
-    private int capacity;
+    private String Capacity;
+
+    public Room(int id, String Code, String campus, String Capacity) {
+        this.id = id;
+        this.Code = Code;
+        this.campus = campus;
+        this.Capacity = Capacity;
+    }
+
+    public Room(int id) {
+        this.id = id;
+    }
 
     public Room() {
     }
 
-    public Room(int id, String roomcode, String campus, int capacity) {
-        this.id = id;
-        this.code = code;
-        this.campus = campus;
-        this.capacity = capacity;
+    public Room(String Code) {
+        this.Code = Code;
     }
 
     public int getId() {
@@ -33,12 +41,12 @@ public class Room {
         this.id = id;
     }
 
-    public String getRoomcode() {
-        return code;
+    public String getCode() {
+        return Code;
     }
 
-    public void setRoomcode(String roomcode) {
-        this.code = roomcode;
+    public void setCode(String Code) {
+        this.Code = Code;
     }
 
     public String getCampus() {
@@ -49,12 +57,11 @@ public class Room {
         this.campus = campus;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public String getCapacity() {
+        return Capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setCapacity(String Capacity) {
+        this.Capacity = Capacity;
     }
-    
 }

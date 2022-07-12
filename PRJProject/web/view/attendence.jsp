@@ -5,7 +5,7 @@
         <title>Check Attendence</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -62,28 +62,6 @@
                             <td style="width:10%">PRJ301</td>
                             <td style="width:10%">HE140027</td>
                             <td style="width:12.5%">Ngo Chi Bao</td>
-                            <td style="width:12.5%">Image Student</td>
-                            <td style="width:10%">Present</td>
-                            <td style="width:10%">abc</td>
-                            <td style="width:10%">sonnt5</td>
-                            <td style="width:20%">5/6/2022 7:30:00</td>
-                        </tr>
-                        <tr>
-                            <td style="width:5%">3</td>
-                            <td style="width:10%">PRJ301</td>
-                            <td style="width:10%">HE140220</td>
-                            <td style="width:12.5%">Tran Hai Long</td>
-                            <td style="width:12.5%">Image Student</td>
-                            <td style="width:10%">Present</td>
-                            <td style="width:10%">abc</td>
-                            <td style="width:10%">sonnt5</td>
-                            <td style="width:20%">5/6/2022 7:30:00</td>
-                        </tr>
-                        <tr>
-                            <td style="width:5%">4</td>
-                            <td style="width:10%">PRJ301</td>
-                            <td style="width:10%">HE140253</td>
-                            <td style="width:12.5%">Nguyen The Hung</td>
                             <td style="width:12.5%">Image Student</td>
                             <td style="width:10%">Present</td>
                             <td style="width:10%">abc</td>

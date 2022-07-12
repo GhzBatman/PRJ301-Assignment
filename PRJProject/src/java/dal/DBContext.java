@@ -19,7 +19,7 @@ public class DBContext {
     public DBContext() {
         try {
             String user = "sa";
-            String pass = "123";
+            String pass = "123456";
             String url = "jdbc:sqlserver://localhost:1433;databaseName=Assi_Attendance";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(url, user, pass);

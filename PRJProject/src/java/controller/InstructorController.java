@@ -4,7 +4,9 @@
  */
 package controller;
 
+import dal.GroupDAO;
 import dal.InstructorDAO;
+import dal.SlotDAO;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -12,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import model.Instructor;
+import model.Slot;
 
 /**
  *
@@ -31,9 +34,17 @@ public class InstructorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        InstructorDAO dao = new InstructorDAO();
-        ArrayList<Instructor> ilist = dao.getAllInstructor();
-        request.setAttribute("ilist", ilist);
+        GroupDAO gdao = new GroupDAO();
+        String campus = request.getParameter("campus");
+        String lecture = request.getParameter("lecture");
+        if (lecture!=null) {
+            lecture = lecture.toLowerCase();
+        }
+        SlotDAO sdao = new SlotDAO();
+        ArrayList<Slot> slist = sdao.getAllSlot(campus, lecture);
+        ArrayList clist = gdao.getAllCampus();
+        request.setAttribute("clist", clist);
+        request.setAttribute("slist", slist);
 
         request.getRequestDispatcher("./view/dashboard.jsp").forward(request, response);
 

@@ -4,14 +4,13 @@
  */
 package controller;
 
-import dal.InstructorDAO;
+import dal.SlotDAO;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import model.Instructor;
+import model.Slot;
 
 /**
  *
@@ -31,10 +30,19 @@ public class TimeTableController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        InstructorDAO dao = new InstructorDAO();
-        ArrayList<Instructor> ilist = dao.getAllInstructor();
-        request.setAttribute("ilist", ilist);
-
+        SlotDAO sdao = new SlotDAO();
+        Slot s11 = sdao.getSlotById(8);
+        Slot s12 = sdao.getSlotById(2);
+        Slot s13 = sdao.getSlotById(1);
+        Slot s14 = sdao.getSlotById(4);
+        Slot s15 = sdao.getSlotById(3);
+        Slot s16 = sdao.getSlotById(7);
+        request.setAttribute("s1", s11);
+        request.setAttribute("s2", s12);
+        request.setAttribute("s3", s13);
+        request.setAttribute("s4", s14);
+        request.setAttribute("s5", s15);
+        request.setAttribute("s6", s16);
         request.getRequestDispatcher("./view/dashboard.jsp").forward(request, response);
 
     }

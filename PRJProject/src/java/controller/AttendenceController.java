@@ -42,21 +42,6 @@ public class AttendenceController extends HttpServlet {
                 CheckAttendDAO cadao = new CheckAttendDAO();
                 StudentDAO studao = new StudentDAO();
                 String sid = request.getParameter("sid");
-
-                SlotDAO sdao = new SlotDAO();
-                ArrayList<Check> cklist = cadao.getAllStudent(Integer.valueOf(sid));
-                Slot s = sdao.getSlotById(Integer.valueOf(sid));
-                ArrayList<Student> stulist = studao.getAllStudent(s.getGroup().getCode());
-                request.setAttribute("cklist", cklist);
-                request.setAttribute("stulist", stulist);
-                request.setAttribute("s", s);
-                request.getRequestDispatcher("CheckAttend.jsp").forward(request, response);
-            }
-            if ("true".equals(status)) {
-                GroupDAO gdao = new GroupDAO();
-                CheckAttendDAO cadao = new CheckAttendDAO();
-                StudentDAO studao = new StudentDAO();
-                String sid = request.getParameter("sid");
                 SlotDAO sdao = new SlotDAO();
                 ArrayList<Check> cklist = cadao.getAllStudent(Integer.valueOf(sid));
                 Slot s = sdao.getSlotById(Integer.valueOf(sid));
@@ -66,9 +51,23 @@ public class AttendenceController extends HttpServlet {
                 request.setAttribute("s", s);
                 request.getRequestDispatcher("./view/attendence.jsp").forward(request, response);
             }
+            if ("true".equals(status)) {
+               CheckAttendDAO cadao = new CheckAttendDAO();
+                StudentDAO studao = new StudentDAO();
+                String sid = request.getParameter("sid");
+                SlotDAO sdao = new SlotDAO();
+                ArrayList<Check> cklist = cadao.getAllStudent(Integer.valueOf(sid));
+                Slot s = sdao.getSlotById(Integer.valueOf(sid));
+                ArrayList<Student> stulist = studao.getAllStudent(s.getGroup().getCode());
+                request.setAttribute("cklist", cklist);
+                request.setAttribute("stulist", stulist);
+                request.setAttribute("s", s);
+
+                request.getRequestDispatcher("./view/checked.jsp").forward(request, response);
+            }
 
         } catch (Exception e) {
-            response.getWriter().print("Lack parameter try again!");
+            response.getWriter().print(e);
         }
 
     }
@@ -99,7 +98,26 @@ public class AttendenceController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        SlotDAO sdao = new SlotDAO();
+        CheckAttendDAO cadao = new CheckAttendDAO();
+        StudentDAO studao = new StudentDAO();
+        String slotid = request.getParameter("sid");
+        String instructorid = request.getParameter("instructorid");
+        Slot s = sdao.getSlotById(Integer.valueOf(slotid));
+        ArrayList<Student> stulist = studao.getAllStudent(s.getGroup().getCode());
+        for (Student student : stulist) {
+            String checkbox = request.getParameter(String.valueOf(student.getCode()));
+            int checkstatus = 0;
+            if (checkbox == null) {
+                checkstatus = 0;
+            } else {
+                checkstatus = 1;
+            }
+            cadao.insertAttendance(Integer.valueOf(slotid), student.getId(), checkstatus, "", instructorid);
+        }
+        sdao.updateStatus(Integer.valueOf(slotid));
+        response.sendRedirect("InstructorController");
+
     }
 
     /**

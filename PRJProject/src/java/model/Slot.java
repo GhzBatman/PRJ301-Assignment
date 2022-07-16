@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package model;
 
@@ -11,16 +12,12 @@ import java.sql.Date;
  * @author Quan
  */
 public class Slot {
-    
-    private int id;
-    private Group group;
-    private Date date;
-    private int slot;
-    private Room room;
-    private boolean status;
-
-    public Slot() {
-    }
+    int id;
+    Group group;
+    Date date;
+    int slot;
+    Room room;
+    boolean status;
 
     public Slot(int id, Group group, Date date, int slot, Room room, boolean status) {
         this.id = id;
@@ -29,6 +26,9 @@ public class Slot {
         this.slot = slot;
         this.room = room;
         this.status = status;
+    }
+
+    public Slot() {
     }
 
     public int getId() {
@@ -78,7 +78,5 @@ public class Slot {
     public void setStatus(boolean status) {
         this.status = status;
     }
-    
-    
     
 }

@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package model;
 
@@ -9,22 +10,20 @@ package model;
  * @author Quan
  */
 public class Subject {
-
     private int id;
-    private String code;
-    private String Name;
+    private String Code, Name;
+
+    public Subject(int id, String Code, String Name) {
+        this.id = id;
+        this.Code = Code;
+        this.Name = Name;
+    }
 
     public Subject() {
     }
 
-    public Subject(int id, String subcode, String subName) {
-        this.id = id;
-        this.code = code;
-        this.Name = Name;
-    }
-
-    public Subject(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Subject(String Code) {
+        this.Code = Code;
     }
 
     public int getId() {
@@ -35,20 +34,21 @@ public class Subject {
         this.id = id;
     }
 
-    public String getcode() {
-        return code;
+    public String getCode() {
+        return Code;
     }
 
-    public void setcode(String subcode) {
-        this.code = code;
+    public void setCode(String Code) {
+        this.Code = Code;
     }
 
     public String getName() {
         return Name;
     }
 
-    public void setName(String subName) {
+    public void setName(String Name) {
         this.Name = Name;
     }
-
+    
+    
 }

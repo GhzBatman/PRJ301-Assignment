@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package model;
 
@@ -9,22 +10,19 @@ package model;
  * @author Quan
  */
 public class Instructor {
-
     private int id;
-    private String name;
-    private String username;
+    private String Name;
+    private String UserName;
 
-    public Instructor() {
-    }
-
-    public Instructor(int id, String name, String username) {
+    public Instructor(int id, String Name, String UserName) {
         this.id = id;
-        this.name = name;
-        this.username = username;
+        this.Name= Name;
+        this.UserName = UserName;
     }
 
-    public Instructor(int aInt, String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Instructor(int id, String UserName) {
+        this.id = id;
+        this.UserName = UserName;
     }
 
     public int getId() {
@@ -36,20 +34,19 @@ public class Instructor {
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return UserName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
-
     
 }

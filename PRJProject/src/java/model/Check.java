@@ -10,16 +10,13 @@ package model;
  * @author Quan
  */
 public class Check {
-    private int id;
-    private Slot slot;
-    private boolean check;
-    private String comment;
-    private Student student;
-    private String taker;
-    private String recordtime;
-
-    public Check() {
-    }
+    int id;
+    Slot slot;
+    boolean check;
+    String comment;
+    Student student;
+    String taker;
+    String recordtime;
 
     public Check(int id, Slot slot, boolean check, String comment, Student student, String taker, String recordtime) {
         this.id = id;
@@ -28,6 +25,14 @@ public class Check {
         this.comment = comment;
         this.student = student;
         this.taker = taker;
+        this.recordtime = recordtime;
+    }
+
+    public String getRecordtime() {
+        return recordtime;
+    }
+
+    public void setRecordtime(String recordtime) {
         this.recordtime = recordtime;
     }
 
@@ -47,6 +52,14 @@ public class Check {
         this.slot = slot;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     public boolean isCheck() {
         return check;
     }
@@ -63,14 +76,6 @@ public class Check {
         this.comment = comment;
     }
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
     public String getTaker() {
         return taker;
     }
@@ -78,14 +83,5 @@ public class Check {
     public void setTaker(String taker) {
         this.taker = taker;
     }
-
-    public String getRecordtime() {
-        return recordtime;
-    }
-
-    public void setRecordtime(String recordtime) {
-        this.recordtime = recordtime;
-    }
-    
     
 }

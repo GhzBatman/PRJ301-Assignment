@@ -13,8 +13,8 @@
         <servlet-class>controller.AttendenceController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>TimeTableController</servlet-name>
-        <servlet-class>controller.TimeTableController</servlet-class>
+        <servlet-name>UpdateController</servlet-name>
+        <servlet-class>controller.UpdateController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ListStudentController</servlet-name>
@@ -29,8 +29,8 @@
         <url-pattern>/AttendenceController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>TimeTableController</servlet-name>
-        <url-pattern>/TimeTableController</url-pattern>
+        <servlet-name>UpdateController</servlet-name>
+        <url-pattern>/UpdateController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -19,72 +19,53 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./view/dashboard.jsp">Home </a>
+                        <a class="nav-link" href="InstructorController">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./view/list.jsp">List Student</a>
+                        <a class="nav-link" href="liststudent">List Student</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <h1>Single Activity Attendance</h1>
-        <h6>Attendance for PRJ301 with Leaturer at Slot 1 on Day Date. in Room </h6>
-        <div class="container-fluid">
-            <div class="row">
-                <table class="table">
-                    <thead style="background-color: cadetblue;">
-                        <tr>
-                            <th style="width:5%">No</th>
-                            <th style="width:10%">Group</th>
-                            <th style="width:10%">Code</th>
-                            <th style="width:12.5%">Name</th>
-                            <th style="width:12.5%">Image</th>
-                            <th style="width:10%">Status</th>
-                            <th style="width:10%">Commnent</th>
-                            <th style="width:10%">Taker</th>
-                            <th style="width:20%">RecordTime</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="width:5%">1</td>
-                            <td style="width:10%">PRJ301</td>
-                            <td style="width:10%">HE151118</td>
-                            <td style="width:12.5%">Nguyen Ba Quan</td>
-                            <td style="width:12.5%">Image Student</td>
-                            <td style="width:10%"><input type="radio" name = "status">present <input type="radio" name = "status">absent</td>
-                            <td style="width:10%">abc</td>
-                            <td style="width:10%">sonnt5</td>
-                            <td style="width:20%">5/6/2022 7:30:00</td>
-                        </tr>
-                        <tr>
-                            <td style="width:5%">2</td>
-                            <td style="width:10%">PRJ301</td>
-                            <td style="width:10%">HE140027</td>
-                            <td style="width:12.5%">Ngo Chi Bao</td>
-                            <td style="width:12.5%">Image Student</td>
-                            <td style="width:10%">Present</td>
-                            <td style="width:10%">abc</td>
-                            <td style="width:10%">sonnt5</td>
-                            <td style="width:20%">5/6/2022 7:30:00</td>
-                        </tr>
-
-
-                        <c:forEach var="s" items="${liststudent}">
+        <div class="container">
+            <h4>Single Activity Attendance</h4>
+            <p >Attendance for <b>${s.getGroup().getSubject().getCode()}</b> with Lecturer <b>${s.getGroup().getInstructor().getUserName()}</b> at Slot <b>${s.getSlot()}</b> on Day <b>${s.getDate()}</b> in Room <b>${s.getRoom().getCode()}</b> at ${s.getGroup().getCampus()}</p>
+            <div style="width: 100%;">
+                <form action="AttendenceController" style="position: relative;padding-bottom: 50px;" method="post">
+                    <table class="table"  >
+                        <thead style="background-color: cadetblue;">
                             <tr>
-                                <td style="width:10%">${s.getId()}</td>
-                                <td style="width:15%">PRJ301</td>
-                                <td style="width:15%">${s.getCode()}</td>
-                                <td style="width:15%">${s.getFullName()} </td>
-                                <td style="width:15%"><img src="${s.getImg()}" width="150px"></td>
-                                <td style="width:10%"><input type="radio" name = "status">present <input type="radio" name = "status">absent</td>
-                                <td style="width:10%">abc</td>
-                                <td style="width:10%">sonnt5</td>
-                                <td style="width:20%">5/6/2022 7:30:00</td>
-                            </tr> 
+                                <th style="width:5%">No</th>
+                                <th style="width:10%">Group</th>
+                                <th style="width:10%">Code</th>
+                                <th style="width:12.5%">Image</th>
+                                <th style="width:12.5%">Name</th>
+                                <th style="width:10%">Status</th>
+                                <th style="width:10%">Commnent</th>
+                                <th style="width:10%">Taker</th>
+                                <th style="width:20%">RecordTime</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <input name="sid" value="${param['sid']}" type="hidden">
+                        <input name="instructorid" value="${s.getGroup().getInstructor().getId()}" type="hidden">
+                        <c:forEach var="stu" items="${stulist}">
+                            <tr>
+                                <td style="width:5%">${stu.getId()}</td>
+                                <td style="width:10%">${s.getGroup().getCode()}</td>
+                                <td style="width:10%">${stu.getCode()}</td>
+                                <td style="width:12.5%"><img src="${stu.getImg()}" width="150px"></td>
+                                <td style="width:12.5%">${stu.getName()}</td>
+                                <td style="width:5%"><input type="radio" class="form-check" name="${stu.getCode()}"></d>
+                                <td style="width:15%"></td>
+                                <td style="width:5%">${s.getGroup().getInstructor().getUserName()}</td>    
+                                <td style="width:30%"></td>
+                            </tr>
                         </c:forEach>
-                </table>
-                </tbody>
+                        <input style="position: absolute; bottom: 5px; right: 0;" type="submit" value="Submit" style="align-items: flex-end" class="btn btn-primary">
+                        </tbody>
+                    </table>
+                </form>
             </div>
         </div>
     </body>

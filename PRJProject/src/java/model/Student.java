@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package model;
 
@@ -9,20 +10,16 @@ package model;
  * @author Quan
  */
 public class Student {
-
     private int id;
     private String code;
-    private String FullName;
+    private String name;
     private boolean gender;
     private String img;
 
-    public Student() {
-    }
-
-    public Student(int id, String code, String FullName, boolean gender, String img) {
+    public Student(int id, String code, String name, boolean gender, String img) {
         this.id = id;
         this.code = code;
-        this.FullName = FullName;
+        this.name = name;
         this.gender = gender;
         this.img = img;
     }
@@ -43,12 +40,12 @@ public class Student {
         this.code = code;
     }
 
-    public String getFullName() {
-        return FullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String FullName) {
-        this.FullName = FullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isGender() {
@@ -66,6 +63,5 @@ public class Student {
     public void setImg(String img) {
         this.img = img;
     }
-
-
+    
 }

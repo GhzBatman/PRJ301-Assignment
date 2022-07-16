@@ -11,9 +11,7 @@ package model;
  */
 public class Room {
     private int id;
-    private String Code;
-    private String campus;
-    private String Capacity;
+    private String Code, campus,Capacity;
 
     public Room(int id, String Code, String campus, String Capacity) {
         this.id = id;

@@ -4,19 +4,23 @@
  */
 package controller;
 
+import dal.CheckAttendDAO;
 import dal.SlotDAO;
+import dal.StudentDAO;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import model.Slot;
+import model.Student;
 
 /**
  *
  * @author Quan
  */
-public class TimeTableController extends HttpServlet {
+public class UpdateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +35,25 @@ public class TimeTableController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         SlotDAO sdao = new SlotDAO();
-        Slot s11 = sdao.getSlotById(8);
-        Slot s12 = sdao.getSlotById(2);
-        Slot s13 = sdao.getSlotById(1);
-        Slot s14 = sdao.getSlotById(4);
-        Slot s15 = sdao.getSlotById(3);
-        Slot s16 = sdao.getSlotById(7);
-        request.setAttribute("s1", s11);
-        request.setAttribute("s2", s12);
-        request.setAttribute("s3", s13);
-        request.setAttribute("s4", s14);
-        request.setAttribute("s5", s15);
-        request.setAttribute("s6", s16);
-        request.getRequestDispatcher("./view/dashboard.jsp").forward(request, response);
+        CheckAttendDAO cadao = new CheckAttendDAO();
+        StudentDAO studao = new StudentDAO();
+        String slotid = request.getParameter("sid");
+        String instructorid = request.getParameter("instructorid");
+        Slot s = sdao.getSlotById(Integer.valueOf(slotid));
+        ArrayList<Student> stulist = studao.getAllStudent(s.getGroup().getCode());
+        cadao.deleteSlot(Integer.valueOf(slotid));
+        for (Student student : stulist) {
+            String checkbox = request.getParameter(String.valueOf(student.getCode()));
+            int checkstatus = 0;
+            if (checkbox == null) {
+                checkstatus = 0;
+            } else {
+                checkstatus = 1;
+            }
+            response.getWriter().println(student.getCode() + "-" + checkbox);
+            cadao.insertAttendance(Integer.valueOf(slotid), student.getId(), checkstatus, "", instructorid);
+        }
+        response.sendRedirect("InstructorController");
 
     }
 
